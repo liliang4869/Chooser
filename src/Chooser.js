@@ -1,4 +1,4 @@
-import React,{Component}from 'react'
+import React,{Component,PropTypes}from 'react'
 import {
     View,Text,Image,ScrollView,Dimensions,TouchableOpacity
 } from 'react-native'
@@ -43,10 +43,15 @@ Chooser.defaultProps={
     unCheckedImg:<Image style={{height:height*0.1,width:width*0.1}} resizeMode='contain' source={require('./img/unChecked.png')}/>,
     checkedImg:<Image  style={{height:height*0.1,width:width*0.1}} resizeMode='contain' source ={require('./img/checked.png')}/>,
     checkIconStyle:{height:height*0.1,flex:1,justifyContent:'center',alignItems:'center'},
-    dataItemStyle:{height:height*0.1,width:width,alignItems:'center'}, 
+    dataItemStyle:{height:height*0.1,width:width,alignItems:'center',alignItems:'center'}, 
     itemSelected:(index)=>{console.log('selected'+index)}
 }
-
+Chooser.propTypes={
+    defaultSelected:PropTypes.number,
+    unCheckedImg:PropTypes.instanceOf(<Image/>),
+    checkedImg:PropTypes.instanceOf(<Image />),
+    itemSelected:PropTypes.func
+}
 export class ChooserItem extends Component{
     componentWillMount(){
         this.index=this.props.index;

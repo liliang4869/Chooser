@@ -14,8 +14,8 @@ export default class ChooserDemo extends Component {
   render() {
     return (
       <View style={styles.container}>
-       <Chooser dataItemStyle={{height:height*0.1,width:width,backgroundColor:'#852369'}}>
-         {dataList.map((data,index)=> <View style={{justifyContent:'center',width:width*0.8,height:height*0.1,alignItems:'center'}} key={index}><Text style={{fontSize:20}}>{data}</Text></View>)}
+       <Chooser dataItemStyle={{height:height*0.1,width:width,backgroundColor:'#852369',justifyContent:'center',alignItems:'center'}}>
+         {dataList.map((data,index)=> <View style={{justifyContent:'center',width:width*0.8,height:height*0.08,alignItems:'center'}} key={index}><Text style={{fontSize:20}}>{data}</Text></View>)}
        </Chooser>
       </View>
     );
